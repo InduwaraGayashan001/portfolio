@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme, CssBaseline, Box } from "@mui/material";
 import { useState, useMemo } from "react";
 import Navbar from "./components/Navbar";
@@ -81,7 +81,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router basename="/portfolio">
+      <Router>
         <Navbar toggleTheme={toggleTheme} mode={mode} />
         <Box
           sx={{
