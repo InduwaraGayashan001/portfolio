@@ -81,7 +81,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="/portfolio">
         <Navbar toggleTheme={toggleTheme} mode={mode} />
         <Box
           sx={{
@@ -97,7 +97,7 @@ export default function App() {
           }}
         >
           <Routes>
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/" element={<Portfolio />} />
             <Route path="/about" element={<AboutSection />} />
             <Route path="/skills" element={<SkillsSection />} />
             <Route path="/projects" element={<ProjectsSection />} />
