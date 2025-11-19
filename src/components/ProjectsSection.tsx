@@ -20,7 +20,7 @@ export const ProjectsSection = () => {
       title: "CodeVision AI - Intelligent Source Code Analyzer",
       description:
         "AI-powered web application for intelligent analysis and exploration of GitHub repositories through natural language conversations",
-      image: "./images/code analyzer.png",
+      image: "/portfolio/images/code analyzer.png",
       tech: ["Python", "LangChain", "Flask", "Chroma", "Bootstrap"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -29,7 +29,7 @@ export const ProjectsSection = () => {
       title: "MediBot - AI Medical Assistant",
       description:
         "AI-powered medical chatbot providing accurate health information using RAG technology and curated medical knowledge base",
-      image: "./images/medibot.png",
+      image: "/portfolio/images/medibot.png",
       tech: ["Python", "LangChain", "Flask", "Pinecone", "Bootstrap"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -38,7 +38,7 @@ export const ProjectsSection = () => {
       title: "IntelliPrep - AI-Powered Interview Coach",
       description:
         "AI-based interview preparation platform with simulated interviews, real-time CV analysis, and personalized feedback for job seekers",
-      image: "./images/inteliprep.png",
+      image: "/portfolio/images/inteliprep.png",
       tech: ["Python", "LangChain", "Flask", "MongoDB", "Bootstrap"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -47,7 +47,7 @@ export const ProjectsSection = () => {
       title: "Real Estate Booking System",
       description:
         "Real Estate Booking System using MERN stack with integrated chat feature for seamless user interaction",
-      image: "./images/realstate.png",
+      image: "/portfolio/images/realstate.png",
       tech: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -56,7 +56,7 @@ export const ProjectsSection = () => {
       title: "Vision Based Label Placement Verification",
       description:
         "Vision-based system using YOLOv8 to detect misprinted labels with automated rejection of faulty products",
-      image: "./images/detection.png",
+      image: "/portfolio/images/detection.png",
       tech: ["Python", "YOLOv8", "C++", "Altium", "SolidWorks"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -65,8 +65,7 @@ export const ProjectsSection = () => {
       title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
       description:
         "Autonomous solar dryer robot with sun-tracking mechanism, distance sensors for obstacle avoidance, and automated drying optimization",
-      image:
-        "./images/selfo.png",
+      image: "/portfolio/images/selfo.png",
       tech: ["Arduino", "C++", "Solar Panels", "Sensors"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -75,8 +74,7 @@ export const ProjectsSection = () => {
       title: "High Frequency Power Amplifier",
       description:
         "RF power amplifier design with impedance matching networks, biasing circuits, and harmonic analysis for optimal performance",
-      image:
-        "./images/highf.jpg",
+      image: "/portfolio/images/highf.jpg",
       tech: ["ADS", "Circuit Design", "RF Engineering"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -85,8 +83,7 @@ export const ProjectsSection = () => {
       title: "Ballerina HubSpot CRM Connector",
       description:
         "WSO2 project: Ballerina connector for HubSpot CRM API integration with comprehensive documentation and test cases",
-      image:
-        "./images/balc.png",
+      image: "/portfolio/images/balc.png",
       tech: ["Ballerina", "HubSpot API", "CRM Integration"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -95,7 +92,7 @@ export const ProjectsSection = () => {
       title: "Ballerina ETL Package",
       description:
         "WSO2 project: ETL tool for seamless data extraction, transformation, and loading with HubSpot-Salesforce pipeline implementation",
-      image: "./images/etl.png",
+      image: "/portfolio/images/etl.png",
       tech: ["Ballerina", "ETL", "HubSpot", "Salesforce"],
       github: "https://github.com/InduwaraGayashan001",
       demo: "#",
@@ -309,7 +306,11 @@ export const ProjectsSection = () => {
                         key={tech}
                         label={tech}
                         size="small"
-                        sx={{ backgroundColor: "transparent", color: theme.palette.text.primary, border: `1px solid ${theme.palette.text.primary}` }}
+                        sx={{
+                          backgroundColor: "transparent",
+                          color: theme.palette.text.primary,
+                          border: `1px solid ${theme.palette.text.primary}`,
+                        }}
                       />
                     ))}
                   </Box>
@@ -378,7 +379,7 @@ export const ProjectsSection = () => {
                   width: "100%",
                   height: "250px",
                   objectFit: "cover",
-                  p:2,
+                  p: 2,
                 }}
               />
               <CardContent sx={{ p: 3 }}>
@@ -436,7 +437,11 @@ export const ProjectsSection = () => {
                       key={tech}
                       label={tech}
                       size="small"
-                      sx={{ backgroundColor: "transparent", color: theme.palette.text.primary, border: `1px solid ${theme.palette.text.primary}` }}
+                      sx={{
+                        backgroundColor: "transparent",
+                        color: theme.palette.text.primary,
+                        border: `1px solid ${theme.palette.text.primary}`,
+                      }}
                     />
                   ))}
                 </Box>

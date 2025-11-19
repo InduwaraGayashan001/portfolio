@@ -19,23 +19,20 @@ export const AchievementsSection = () => {
       icon: <EmojiEvents sx={{ fontSize: 40, color: "#FFD700" }} />,
       title: "Data Crunch at CodeJam CSE 2025",
       description: "Finalists - Top 10 teams in ML Hackathon (May 2025)",
-      image:
-        "./images/datacrunch.png",
+      image: "/portfolio/images/datacrunch.png",
     },
     {
       icon: <EmojiEvents sx={{ fontSize: 40, color: "#FFD700" }} />,
       title: "Comfix TechCom Ideathon",
       description: "Finalists - Top 10 teams (Aug 2024)",
-      image:
-        "./images/comfix.png",
+      image: "/portfolio/images/comfix.png",
     },
     {
       icon: <EmojiEvents sx={{ fontSize: 40, color: "#ff9800" }} />,
       title: "SLIoT Challenge 2023",
       description:
         "Semifinalists - Top 20 teams with Mechapulse machine failure detection system (Feb 2024)",
-      image:
-        "./images/sliot.png",
+      image: "/portfolio/images/sliot.png",
     },
   ];
 

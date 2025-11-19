@@ -26,8 +26,7 @@ export const MilestonesSection = () => {
       description:
         "Began primary education at R/Nivi/Kalalella M.V., then transferred to Kahawata Primary School",
       icon: SchoolIcon,
-      image:
-        "./images/scl.png",
+      image: "/portfolio/images/scl.png",
     },
     {
       year: "2010",
@@ -35,48 +34,42 @@ export const MilestonesSection = () => {
       description:
         "Achieved 174 marks and joined Sivali Central College, Ratnapura",
       icon: EmojiEventsIcon,
-      image:
-        "./images/scc.jpg",
+      image: "/portfolio/images/scc.jpg",
     },
     {
       year: "2017",
       title: "GCE O/L",
       description: "Achieved 9As in Ordinary Level Examination",
       icon: MenuBookIcon,
-      image:
-        "./images/ol.png",
+      image: "/portfolio/images/ol.png",
     },
     {
       year: "2020",
       title: "GCE A/L",
       description: "3As in Physical Science Stream. DR: 09, IR: 266",
       icon: MilitaryTechIcon,
-      image:
-        "./images/al.jpg",
+      image: "/portfolio/images/al.jpg",
     },
     {
       year: "2021",
       title: "University of Moratuwa",
       description: "Selected for B.Sc. Engineering (Hons.) program",
       icon: AccountBalanceIcon,
-      image:
-        "./images/uom.jpg",
+      image: "/portfolio/images/uom.jpg",
     },
     {
       year: "2023",
       title: "Department of ENTC",
       description: "Selected to Electronic and Telecommunication Engineering",
       icon: ElectricBoltIcon,
-      image:
-        "./images/entc.jpg",
+      image: "/portfolio/images/entc.jpg",
     },
     {
       year: "2024",
       title: "WSO2 Internship",
       description: "Software Engineer Intern at WSO2 Integration team",
       icon: WorkIcon,
-      image:
-        "./images/wso2t.png",
+      image: "/portfolio/images/wso2t.png",
     },
   ];
 

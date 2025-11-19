@@ -25,10 +25,10 @@ function HeroSection() {
         px: { xs: 2, md: 4 },
       }}
     >
-      <Box sx={{ flex: 2, textAlign: "center", mb: { xs: 2, md: 0 }, mt : { xs: 4, md: 0 } }}>
+      <Box sx={{ flex: 2, textAlign: "center", mb: { xs: 2, md: 0 } }}>
         <Box
           component="img"
-          src="./images/avatar.png"
+          src="/portfolio/images/avatar.png"
           alt="Induwara Gayashan"
           sx={{
             width: { xs: "180px", md: "300px" },
@@ -84,7 +84,7 @@ function HeroSection() {
           }}
         >
           <img
-            src="./images/uom.png"
+            src="/portfolio/images/uom.png"
             alt="UoM Logo"
             style={{
               width: "30px",
