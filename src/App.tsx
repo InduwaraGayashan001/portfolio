@@ -88,8 +88,8 @@ export default function App() {
             minHeight: "100vh",
             backgroundImage:
               mode === "dark"
-                ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("/images/image.png")`
-                : `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url("/images/image.png")`,
+                ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("/portfolio/images/image.png")`
+                : `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url("/portfolio/images/image.png")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "repeat-y",
@@ -97,7 +97,7 @@ export default function App() {
           }}
         >
           <Routes>
-            <Route path="/" element={<Portfolio />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<AboutSection />} />
             <Route path="/skills" element={<SkillsSection />} />
             <Route path="/projects" element={<ProjectsSection />} />
