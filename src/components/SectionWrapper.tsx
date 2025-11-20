@@ -13,6 +13,15 @@ function SectionWrapper({ title, children, id }: SectionWrapperProps) {
       <Typography variant="h4" fontWeight="bold" color="#0478b7ff" mb={2}>
         {title}
       </Typography>
+      <Box
+        sx={{
+          height: "2px",
+          width: "80px",
+          backgroundColor: "#0478b7ff",
+          margin: "0 auto 24px",
+          borderRadius: "2px",
+        }}
+      />
       {children}
     </Box>
   );
