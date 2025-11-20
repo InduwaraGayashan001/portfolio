@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, SvgIcon } from "@mui/material";
 import {
   Email,
   Phone,
@@ -8,9 +8,15 @@ import {
 } from "@mui/icons-material";
 import SectionWrapper from "./SectionWrapper";
 
+const MediumIcon = (props: any) => (
+  <SvgIcon {...props} viewBox="0 0 24 24">
+    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+  </SvgIcon>
+);
+
 function ContactSection() {
   return (
-    <SectionWrapper title="Contact">
+    <SectionWrapper title="Contact Me">
       <Box
         sx={{
           maxWidth: "800px",
@@ -183,6 +189,33 @@ function ContactSection() {
             <GitHub sx={{ fontSize: "28px", color: "#f50057" }} />
             <Typography variant="body2" sx={{ fontWeight: "bold" }}>
               GitHub
+            </Typography>
+          </Box>
+          <Box
+            component="a"
+            href="https://medium.com/@induwaragayashan"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              padding: "12px 24px",
+              borderRadius: "12px",
+              backgroundColor: "rgba(245, 0, 87, 0.05)",
+              border: "1px solid rgba(245, 0, 87, 0.2)",
+              textDecoration: "none",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                backgroundColor: "rgba(245, 0, 87, 0.1)",
+                transform: "translateY(-3px)",
+                boxShadow: "0 4px 12px rgba(245, 0, 87, 0.2)",
+              },
+            }}
+          >
+            <MediumIcon sx={{ fontSize: "28px", color: "#f50057" }} />
+            <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+              Medium
             </Typography>
           </Box>
         </Box>
