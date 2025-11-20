@@ -1,8 +1,11 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import SectionWrapper from "./SectionWrapper";
+import { useEffect, useRef, useState } from "react";
 
 function SkillsSection() {
   const theme = useTheme();
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const skillCategories = [
     {
@@ -96,6 +99,37 @@ function SkillsSection() {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setVisibleCards((prev) => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      cardRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <SectionWrapper title="Skills">
       <Box
@@ -111,115 +145,121 @@ function SkillsSection() {
           margin: "0 auto",
         }}
       >
-        {skillCategories.map((category) => (
-          <Box
-            key={category.title}
-            sx={{
-              backgroundColor:
-                theme.palette.mode === "dark"
-                  ? "rgba(30, 30, 30, 0.6)"
-                  : "rgba(255, 255, 255, 0.6)",
-              backdropFilter: "blur(10px)",
-              borderRadius: "16px",
-              padding: 3,
-              border:
-                theme.palette.mode === "dark"
-                  ? "1px solid rgba(255, 255, 255, 0.1)"
-                  : "1px solid rgba(0, 0, 0, 0.1)",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                transform: "translateY(-5px)",
-                boxShadow: "0 8px 24px rgba(245, 0, 87, 0.3)",
-                border: "1px solid rgba(245, 0, 87, 0.4)",
-              },
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                mb: 2,
-                color: "#f50057",
-                textAlign: "center",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                fontSize: { xs: "14px", md: "16px" },
-              }}
-            >
-              {category.title}
-            </Typography>
+        {skillCategories.map((category, index) => {
+          const isVisible = visibleCards.includes(index);
+          return (
             <Box
+              key={category.title}
+              ref={(el) => {
+                cardRefs.current[index] = el as HTMLDivElement | null;
+              }}
+              data-index={index}
               sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 2,
-                justifyContent: "center",
-                alignItems: "center",
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(50px)",
+                transition: isVisible
+                  ? "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)"
+                  : "all 0.3s ease",
+                transitionDelay: `${index * 0.1}s`,
+                backgroundColor:
+                  theme.palette.mode === "dark"
+                    ? "rgba(30, 30, 30, 0.6)"
+                    : "rgba(255, 255, 255, 0.6)",
+                backdropFilter: "blur(10px)",
+                borderRadius: "16px",
+                padding: 3,
+                border:
+                  theme.palette.mode === "dark"
+                    ? "1px solid rgba(255, 255, 255, 0.1)"
+                    : "1px solid rgba(0, 0, 0, 0.1)",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                  boxShadow: "0 8px 24px rgba(245, 0, 87, 0.3)",
+                  border: "1px solid rgba(245, 0, 87, 0.4)",
+                },
               }}
             >
-              {category.skills.map((skill) => (
-                <Box
-                  key={skill.name}
-                  sx={{
-                    width:
-                      skill.name === "SolidWorks"
-                        ? "100px"
-                        : "50px",
-                    height:
-                      skill.name === "SolidWorks"
-                        ? "100px"
-                        : "50px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 0.5,
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.2)",
-                    },
-                  }}
-                >
-                  {skill.logo.startsWith("http") ? (
-                    <img
-                      src={skill.logo}
-                      alt={skill.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                      }}
-                    />
-                  ) : (
-                    <>
-                      <Box
-                        sx={{
-                          fontSize: "32px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: "bold",
+                  mb: 2,
+                  color: "#f50057",
+                  textAlign: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  fontSize: { xs: "14px", md: "16px" },
+                }}
+              >
+                {category.title}
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 2,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {category.skills.map((skill) => (
+                  <Box
+                    key={skill.name}
+                    sx={{
+                      width: skill.name === "SolidWorks" ? "100px" : "50px",
+                      height: skill.name === "SolidWorks" ? "100px" : "50px",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 0.5,
+                      transition: "transform 0.3s ease",
+                      "&:hover": {
+                        transform: "scale(1.2)",
+                      },
+                    }}
+                  >
+                    {skill.logo.startsWith("http") ? (
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
                         }}
-                      >
-                        {skill.logo}
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        sx={{
-                          fontSize: "9px",
-                          textAlign: "center",
-                          color: theme.palette.text.secondary,
-                          fontWeight: 500,
-                        }}
-                      >
-                        {skill.name}
-                      </Typography>
-                    </>
-                  )}
-                </Box>
-              ))}
+                      />
+                    ) : (
+                      <>
+                        <Box
+                          sx={{
+                            fontSize: "32px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          {skill.logo}
+                        </Box>
+                        <Typography
+                          variant="caption"
+                          sx={{
+                            fontSize: "9px",
+                            textAlign: "center",
+                            color: theme.palette.text.secondary,
+                            fontWeight: 500,
+                          }}
+                        >
+                          {skill.name}
+                        </Typography>
+                      </>
+                    )}
+                  </Box>
+                ))}
+              </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
       </Box>
     </SectionWrapper>
   );
