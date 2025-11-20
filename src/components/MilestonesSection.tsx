@@ -145,7 +145,7 @@ export const MilestonesSection = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: "24px", md: "32px" },
+                    fontSize: { xs: "16px", md: "32px" },
                     fontWeight: "bold",
                     color: milestoneColor,
                     lineHeight: 1,
