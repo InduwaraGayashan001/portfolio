@@ -36,6 +36,7 @@ function HeroSection() {
             objectFit: "cover",
             borderRadius: "50%",
             border: "2px solid #f50057",
+            mt: { xs: 3, md: 0 },
           }}
         />
       </Box>
@@ -51,15 +52,17 @@ function HeroSection() {
         </Typography>
         <Typography
           variant="h1"
-          component="h1"
           sx={{
             ...fadeIn,
             lineHeight: 1.1,
-            fontSize: { xs: 40, md: 80 },
+            fontSize: { xs: 60, md: 80 },
             fontWeight: "bold",
           }}
         >
-          Induwara Gayashan
+          Induwara{" "}
+          <Box component="span" sx={{ display: { xs: "none", md: "inline" } }}>
+            Gayashan
+          </Box>
         </Typography>
         <Typography
           variant="h4"
@@ -67,12 +70,18 @@ function HeroSection() {
           gutterBottom
           sx={{
             ...fadeIn,
-            mb: 3,
-            mt: 3,
+            mb: { xs: 1, md: 3 },
+            mt: { xs: 1, md: 3 },
             fontSize: { xs: 20, md: 30 },
           }}
         >
-          Electronic & Telecommunication Engineering Student
+          {""}
+          <Box component="span" sx={{ display: { xs: "none", md: "inline" } }}>
+            Electronic & Telecommunication Engineering Student
+          </Box>
+          <Box component="span" sx={{ display: { xs: "inline", md: "none" } }}>
+            ENTC Student
+          </Box>
         </Typography>
         <Box
           sx={{
@@ -96,7 +105,19 @@ function HeroSection() {
             component="span"
             sx={{ color: "gray", fontSize: { xs: 15, md: 20 } }}
           >
-            Final Year Undergraduate at University of Moratuwa
+            Final Year Undergraduate at {""}
+            <Box
+              component="span"
+              sx={{ display: { xs: "none", md: "inline" } }}
+            >
+              University of Moratuwa
+            </Box>
+            <Box
+              component="span"
+              sx={{ display: { xs: "inline", md: "none" } }}
+            >
+              UoM
+            </Box>
           </Typography>
         </Box>
         <Button
