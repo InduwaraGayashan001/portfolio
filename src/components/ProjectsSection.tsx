@@ -18,12 +18,29 @@ export const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "PowerLens - Transformer Maintenance Record Keeper",
+      description:
+        "AI-assisted transformer inspection platform for thermal anomaly detection with automated digital maintenance reporting",
+      image: "/portfolio/images/powerlens.png",
+      tech: [
+        "Python",
+        "TypeScript",
+        "React",
+        "Java",
+        "Spring Boot",
+        "MySQL",
+      ],
+      github:
+        "https://github.com/SamudraUduwaka/Transformer-maintenance-record-keeper-team-backslash",
+      demo: "#",
+    },
+    {
       title: "CodeVision AI - Intelligent Source Code Analyzer",
       description:
         "AI-powered web application for intelligent analysis and exploration of GitHub repositories through natural language conversations",
       image: "/portfolio/images/code analyzer.png",
-      tech: ["Python", "LangChain", "Flask", "Chroma", "Bootstrap"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Chroma"],
+      github: "https://github.com/InduwaraGayashan001/Source-Code-Analyzer",
       demo: "#",
     },
     {
@@ -31,17 +48,8 @@ export const ProjectsSection = () => {
       description:
         "AI-powered medical chatbot providing accurate health information using RAG technology and curated medical knowledge base",
       image: "/portfolio/images/medibot.png",
-      tech: ["Python", "LangChain", "Flask", "Pinecone", "Bootstrap"],
-      github: "https://github.com/InduwaraGayashan001",
-      demo: "#",
-    },
-    {
-      title: "IntelliPrep - AI-Powered Interview Coach",
-      description:
-        "AI-based interview preparation platform with simulated interviews, real-time CV analysis, and personalized feedback for job seekers",
-      image: "/portfolio/images/inteliprep.png",
-      tech: ["Python", "LangChain", "Flask", "MongoDB", "Bootstrap"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Pinecone"],
+      github: "https://github.com/InduwaraGayashan001/Medical-Chatbot",
       demo: "#",
     },
     {
@@ -49,53 +57,80 @@ export const ProjectsSection = () => {
       description:
         "Real Estate Booking System using MERN stack with integrated chat feature for seamless user interaction",
       image: "/portfolio/images/realstate.png",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["JavaScript", "React", "Node.js", "MongoDB"],
+      github:
+        "https://github.com/InduwaraGayashan001/Real-State-Booking-System",
       demo: "#",
     },
     {
-      title: "Vision Based Label Placement Verification",
+      title: "IntelliPrep - Q&A Creator",
       description:
-        "Vision-based system using YOLOv8 to detect misprinted labels with automated rejection of faulty products",
-      image: "/portfolio/images/detection.png",
-      tech: ["Python", "YOLOv8", "C++", "Altium", "SolidWorks"],
-      github: "https://github.com/InduwaraGayashan001",
-      demo: "#",
-    },
-    {
-      title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
-      description:
-        "Autonomous solar dryer robot with sun-tracking mechanism, distance sensors for obstacle avoidance, and automated drying optimization",
-      image: "/portfolio/images/selfo.png",
-      tech: ["Arduino", "C++", "Solar Panels", "Sensors"],
-      github: "https://github.com/InduwaraGayashan001",
-      demo: "#",
-    },
-    {
-      title: "High Frequency Power Amplifier",
-      description:
-        "RF power amplifier design with impedance matching networks, biasing circuits, and harmonic analysis for optimal performance",
-      image: "/portfolio/images/highf.jpg",
-      tech: ["ADS", "Circuit Design", "RF Engineering"],
-      github: "https://github.com/InduwaraGayashan001",
-      demo: "#",
-    },
-    {
-      title: "Ballerina HubSpot CRM Connector",
-      description:
-        "WSO2 project: Ballerina connector for HubSpot CRM API integration with comprehensive documentation and test cases",
-      image: "/portfolio/images/balc.png",
-      tech: ["Ballerina", "HubSpot API", "CRM Integration"],
-      github: "https://github.com/InduwaraGayashan001",
+        "Web application that generates interview-style Q&A pairs from uploaded PDF documents using OpenAI models",
+      image: "/portfolio/images/inteliprep.png",
+      tech: [
+        "Python",
+        "FastAPI",
+        "OpenAI",
+        "LangChain",
+        "JavaScript",
+        "React",
+        "FAISS",
+      ],
+      github:
+        "https://github.com/InduwaraGayashan001/Interview-Questions-Creator",
       demo: "#",
     },
     {
       title: "Ballerina ETL Package",
       description:
-        "WSO2 project: ETL tool for seamless data extraction, transformation, and loading with HubSpot-Salesforce pipeline implementation",
+        "ETL package providing APIs for data categorization, cleaning, enrichment, filtering, security, and unstructured data extraction",
       image: "/portfolio/images/etl.png",
-      tech: ["Ballerina", "ETL", "HubSpot", "Salesforce"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["Ballerina", "Java", "OpenAI"],
+      github: "https://github.com/ballerina-platform/module-ballerina-etl",
+      demo: "#",
+    },
+    {
+      title: "RFID Based Inventory Management System",
+      description:
+        "RFID-based inventory management system enabling automated tracking and real-time inventory updates",
+      image: "/portfolio/images/rfid.png",
+      tech: ["JavaScript", "React", "Java", "Spring Boot", "MySQL"],
+      github:
+        "https://github.com/InduwaraGayashan001/RFID-Based-Inventory-Managemet-System-",
+      demo: "#",
+    },
+    {
+      title: "ClariFi - Medical Report/Scan Analyzing Assistant AI",
+      description:
+        "AI-powered assistant to analyze medical reports and scans, providing insights and automated suggestions to users",
+      image: "/portfolio/images/clarifi.png",
+      tech: [
+        "JavaScript",
+        "React Native",
+        "Python",
+        "Django",
+        "Llama",
+        "Firebase",
+      ],
+      github:
+        "https://github.com/Tronictos/ClariFi-Medical-Report-Analysis-System",
+      demo: "#",
+    },
+    {
+      title: "Vision Based Label Placement Verification System",
+      description:
+        "Vision-based system to detect misprinted labels on production line with automated feedback loop for rejecting faulty products",
+      image: "/portfolio/images/detection.png",
+      tech: [
+        "Python",
+        "YOLOv8",
+        "C++",
+        "Microchip Studio",
+        "Altium",
+        "SolidWorks",
+      ],
+      github:
+        "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
       demo: "#",
     },
   ];
