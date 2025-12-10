@@ -99,40 +99,6 @@ export const ProjectsSection = () => {
         "https://github.com/InduwaraGayashan001/RFID-Based-Inventory-Managemet-System-",
       demo: "#",
     },
-    {
-      title: "ClariFi - Medical Report/Scan Analyzing Assistant AI",
-      description:
-        "AI-powered assistant to analyze medical reports and scans, providing insights and automated suggestions to users",
-      image: "/portfolio/images/clarifi.png",
-      tech: [
-        "JavaScript",
-        "React Native",
-        "Python",
-        "Django",
-        "Llama",
-        "Firebase",
-      ],
-      github:
-        "https://github.com/Tronictos/ClariFi-Medical-Report-Analysis-System",
-      demo: "#",
-    },
-    {
-      title: "Vision Based Label Placement Verification System",
-      description:
-        "Vision-based system to detect misprinted labels on production line with automated feedback loop for rejecting faulty products",
-      image: "/portfolio/images/detection.png",
-      tech: [
-        "Python",
-        "YOLOv8",
-        "C++",
-        "Microchip Studio",
-        "Altium",
-        "SolidWorks",
-      ],
-      github:
-        "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
-      demo: "#",
-    },
   ];
 
   useEffect(() => {
