@@ -22,14 +22,7 @@ export const ProjectsSection = () => {
       description:
         "AI-assisted transformer inspection platform for thermal anomaly detection with automated digital maintenance reporting",
       image: "/portfolio/images/powerlens.png",
-      tech: [
-        "Python",
-        "TypeScript",
-        "React",
-        "Java",
-        "Spring Boot",
-        "MySQL",
-      ],
+      tech: ["Python", "TypeScript", "React", "Java", "Spring Boot", "MySQL"],
       github:
         "https://github.com/SamudraUduwaka/Transformer-maintenance-record-keeper-team-backslash",
       demo: "#",
@@ -97,6 +90,33 @@ export const ProjectsSection = () => {
       tech: ["JavaScript", "React", "Java", "Spring Boot", "MySQL"],
       github:
         "https://github.com/InduwaraGayashan001/RFID-Based-Inventory-Managemet-System-",
+      demo: "#",
+    },
+    {
+      title: "Vision Based Label Placement Verification",
+      description:
+        "Vision-based system using YOLOv8 to detect misprinted labels with automated rejection of faulty products",
+      image: "./images/detection.png",
+      tech: ["Python", "YOLOv8", "C++", "Altium", "SolidWorks"],
+      github: "https://github.com/InduwaraGayashan001",
+      demo: "#",
+    },
+    {
+      title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
+      description:
+        "Autonomous solar dryer robot with sun-tracking mechanism, distance sensors for obstacle avoidance, and automated drying optimization",
+      image: "./images/selfo.png",
+      tech: ["Arduino", "C++", "Solar Panels", "Sensors"],
+      github: "https://github.com/InduwaraGayashan001",
+      demo: "#",
+    },
+    {
+      title: "High Frequency Power Amplifier",
+      description:
+        "RF power amplifier design with impedance matching networks, biasing circuits, and harmonic analysis for optimal performance",
+      image: "./images/highf.jpg",
+      tech: ["ADS", "Circuit Design", "RF Engineering"],
+      github: "https://github.com/InduwaraGayashan001",
       demo: "#",
     },
   ];
