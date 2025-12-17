@@ -8,7 +8,7 @@ import {
   IconButton,
   useTheme,
 } from "@mui/material";
-import { GitHub, ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { GitHub, ChevronLeft, ChevronRight, LinkRounded } from "@mui/icons-material";
 import SectionWrapper from "./SectionWrapper";
 
 export const ProjectsSection = () => {
@@ -98,7 +98,8 @@ export const ProjectsSection = () => {
         "Vision-based system using YOLOv8 to detect misprinted labels with automated rejection of faulty products",
       image: "./images/detection.png",
       tech: ["Python", "YOLOv8", "C++", "Altium", "SolidWorks"],
-      github: "https://github.com/InduwaraGayashan001",
+      github:
+        "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
       demo: "#",
     },
     {
@@ -106,8 +107,9 @@ export const ProjectsSection = () => {
       description:
         "Autonomous solar dryer robot with sun-tracking mechanism, distance sensors for obstacle avoidance, and automated drying optimization",
       image: "./images/selfo.png",
-      tech: ["Arduino", "C++", "Solar Panels", "Sensors"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["Arduino", "Altium", "SolidWorks"],
+      github:
+        "https://www.linkedin.com/posts/induwara-gayashan-78812a277_innovation-engineering-teamwork-activity-7116061212747984896-S9nK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
     },
     {
@@ -115,8 +117,9 @@ export const ProjectsSection = () => {
       description:
         "RF power amplifier design with impedance matching networks, biasing circuits, and harmonic analysis for optimal performance",
       image: "./images/highf.jpg",
-      tech: ["ADS", "Circuit Design", "RF Engineering"],
-      github: "https://github.com/InduwaraGayashan001",
+      tech: ["Altium", "Solidworks"],
+      github:
+        "https://www.linkedin.com/posts/induwara-gayashan-78812a277_analogproject-electronics-highfrequencyamplifier-activity-7166884275240251392-_tSb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
     },
   ];
@@ -315,7 +318,7 @@ export const ProjectsSection = () => {
                         },
                       }}
                     >
-                      <GitHub sx={{ fontSize: "18px" }} />
+                      <LinkRounded sx={{ fontSize: "18px" }} />
                     </IconButton>
                   </Box>
                   <Typography
