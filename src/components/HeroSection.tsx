@@ -120,13 +120,23 @@ function HeroSection() {
             </Box>
           </Typography>
         </Box>
-        <Button
-          variant="contained"
-          onClick={() => navigate("/contact")}
-          sx={{ mt: 1, fontSize: 15 }}
-        >
-          Contact Me
-        </Button>
+        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mt: 1 }}>
+          <Button
+            variant="contained"
+            onClick={() => navigate("/contact")}
+            sx={{ fontSize: 15 }}
+          >
+            Contact Me
+          </Button>
+          <Button
+            variant="outlined"
+            href="/portfolio/resume/induwara-resume.pdf"
+            download="induwara-resume.pdf"
+            sx={{ fontSize: 15 }}
+          >
+            Download Resume
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
