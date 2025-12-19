@@ -132,7 +132,7 @@ function HeroSection() {
             variant="outlined"
             href="/portfolio/resume/induwara-resume.pdf"
             download="induwara-resume.pdf"
-            sx={{ fontSize: 15 }}
+            sx={{ fontSize: 15 , border : "1px solid #f50057"}}
           >
             Download Resume
           </Button>
