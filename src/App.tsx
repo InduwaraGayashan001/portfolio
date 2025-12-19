@@ -88,10 +88,10 @@ export default function App() {
             minHeight: "100vh",
             backgroundImage:
               mode === "dark"
-                ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("/portfolio/images/image.png")`
-                : `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url("/portfolio/images/image.png")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+                ? `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url("/portfolio/images/background.png")`
+                : `url("/portfolio/images/background2.png")`,
+            backgroundSize: "100% auto",
+            backgroundPosition: "top center",
             backgroundRepeat: "repeat-y",
             transition: "background-image 0.3s ease",
           }}
