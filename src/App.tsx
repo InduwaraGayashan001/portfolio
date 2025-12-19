@@ -26,7 +26,7 @@ export default function App() {
           },
           background: {
             default: mode === "dark" ? "transparent" : "#f5f5f5",
-            paper: mode === "dark" ? "#1e1e1e" : "#ffffff",
+            paper: mode === "dark" ? "#1e1e1e" : "#ffffffdf",
           },
         },
         typography: {
@@ -78,6 +78,9 @@ export default function App() {
     setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
   };
 
+  const bgColor =
+    mode === "dark" ? "rgba(10, 10, 25, 0.85)" : "rgba(232, 232, 242, 0.6)";
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -98,12 +101,54 @@ export default function App() {
         >
           <Routes>
             <Route path="/" element={<Portfolio />} />
-            <Route path="/about" element={<AboutSection />} />
-            <Route path="/skills" element={<SkillsSection />} />
-            <Route path="/projects" element={<ProjectsSection />} />
-            <Route path="/achievements" element={<AchievementsSection />} />
-            <Route path="/milestones" element={<MilestonesSection />} />
-            <Route path="/contact" element={<ContactSection />} />
+            <Route
+              path="/about"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <AboutSection />
+                </Box>
+              }
+            />
+            <Route
+              path="/skills"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <SkillsSection />
+                </Box>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <ProjectsSection />
+                </Box>
+              }
+            />
+            <Route
+              path="/achievements"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <AchievementsSection />
+                </Box>
+              }
+            />
+            <Route
+              path="/milestones"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <MilestonesSection />
+                </Box>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Box sx={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+                  <ContactSection />
+                </Box>
+              }
+            />
           </Routes>
         </Box>
       </Router>

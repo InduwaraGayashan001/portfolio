@@ -13,12 +13,12 @@ function Portfolio() {
   const bgColor1 =
     theme.palette.mode === "dark"
       ? "rgba(10, 10, 25, 0.85)"
-      : "rgba(232, 232, 242, 0.85)";
+      : "rgba(232, 232, 242, 0.8)";
 
   const bgColor2 =
     theme.palette.mode === "dark"
       ? "rgba(25, 10, 35, 0.85)"
-      : "rgba(250, 245, 250, 0.85)";
+      : "rgba(250, 245, 250, 0.8)";
 
   return (
     <Box>
