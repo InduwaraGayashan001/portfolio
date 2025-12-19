@@ -130,11 +130,13 @@ function HeroSection() {
           </Button>
           <Button
             variant="outlined"
+            component="a"
             href="/portfolio/resume/induwara-resume.pdf"
-            download="induwara-resume.pdf"
-            sx={{ fontSize: 15 , border : "1px solid #f50057"}}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ fontSize: 15, border: "1px solid #f50057" }}
           >
-            Download Resume
+            View Resume
           </Button>
         </Box>
       </Box>
