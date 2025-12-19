@@ -96,7 +96,7 @@ export const ProjectsSection = () => {
       title: "Vision Based Label Placement Verification",
       description:
         "Vision-based system using YOLOv8 to detect misprinted labels with automated rejection of faulty products",
-      image: "./images/detection.png",
+      image: "/portfolio/images/detection.png",
       tech: ["Python", "YOLOv8", "C++", "Altium", "SolidWorks"],
       github:
         "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
@@ -106,7 +106,7 @@ export const ProjectsSection = () => {
       title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
       description:
         "Autonomous solar dryer robot with sun-tracking mechanism, distance sensors for obstacle avoidance, and automated drying optimization",
-      image: "./images/selfo.png",
+      image: "/portfolio/images/selfo.png",
       tech: ["Arduino", "Altium", "SolidWorks"],
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_innovation-engineering-teamwork-activity-7116061212747984896-S9nK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
@@ -116,7 +116,7 @@ export const ProjectsSection = () => {
       title: "High Frequency Power Amplifier",
       description:
         "RF power amplifier design with impedance matching networks, biasing circuits, and harmonic analysis for optimal performance",
-      image: "./images/highf.jpg",
+      image: "/portfolio/images/highf.jpg",
       tech: ["Altium", "Solidworks"],
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_analogproject-electronics-highfrequencyamplifier-activity-7166884275240251392-_tSb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
