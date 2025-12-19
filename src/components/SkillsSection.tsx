@@ -14,22 +14,22 @@ function SkillsSection() {
         {
           name: "Python",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+          level: "Experienced",
         },
         {
           name: "Java",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+          level: "Experienced",
         },
         {
           name: "JavaScript",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        },
-        {
-          name: "MATLAB",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg",
+          level: "Basic",
         },
         {
           name: "Ballerina",
           logo: "https://ballerina.io/images/ballerina-logo.svg",
+          level: "Intermediate",
         },
       ],
     },
@@ -39,18 +39,22 @@ function SkillsSection() {
         {
           name: "React",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+          level: "Intermediate",
         },
         {
           name: "Node.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+          level: "Basic",
         },
         {
           name: "Spring Boot",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+          level: "Experienced",
         },
         {
-          name: "TensorFlow",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+          name: "PyTorch",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+          level: "Intermediate",
         },
       ],
     },
@@ -60,10 +64,12 @@ function SkillsSection() {
         {
           name: "MongoDB",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+          level: "Experienced",
         },
         {
           name: "MySQL",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+          level: "Intermediate",
         },
       ],
     },
@@ -73,14 +79,17 @@ function SkillsSection() {
         {
           name: "Docker",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+          level: "Basic",
         },
         {
           name: "Kubernetes",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+          level: "Basic",
         },
         {
           name: "Git",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+          level: "Experienced",
         },
       ],
     },
@@ -90,10 +99,12 @@ function SkillsSection() {
         {
           name: "Arduino",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+          level: "Experienced",
         },
         {
           name: "SolidWorks",
           logo: "https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg",
+          level: "Intermediate",
         },
       ],
     },
@@ -206,31 +217,44 @@ function SkillsSection() {
                   <Box
                     key={skill.name}
                     sx={{
-                      width: skill.name === "SolidWorks" ? "100px" : "50px",
-                      height: skill.name === "SolidWorks" ? "100px" : "50px",
+                      width:  "70px",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
                       gap: 0.5,
-                      transition: "transform 0.3s ease",
-                      "&:hover": {
-                        transform: "scale(1.2)",
-                      },
+                      position: "relative",
+                      cursor: "pointer",
                     }}
                   >
-                    {skill.logo.startsWith("http") ? (
-                      <img
-                        src={skill.logo}
-                        alt={skill.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                        }}
-                      />
-                    ) : (
-                      <>
+                    <Box
+                      sx={{
+                        width:"50px",
+                        height:"50px",
+                        position: "relative",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          filter: "blur(3px)",
+                        },
+                        "&:hover + .level-text": {
+                          opacity: 1,
+                        },
+                      }}
+                    >
+                      {skill.logo.startsWith("http") ? (
+                        <img
+                          src={skill.logo}
+                          alt={skill.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                          }}
+                        />
+                      ) : (
                         <Box
                           sx={{
                             fontSize: "32px",
@@ -241,19 +265,46 @@ function SkillsSection() {
                         >
                           {skill.logo}
                         </Box>
-                        <Typography
-                          variant="caption"
-                          sx={{
-                            fontSize: "9px",
-                            textAlign: "center",
-                            color: theme.palette.text.secondary,
-                            fontWeight: 500,
-                          }}
-                        >
-                          {skill.name}
-                        </Typography>
-                      </>
-                    )}
+                      )}
+                    </Box>
+                    <Typography
+                      className="level-text"
+                      sx={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        opacity: 0,
+                        transition: "opacity 0.3s ease",
+                        fontSize: "11px",
+                        fontWeight: "bold",
+                        color: "#f50057",
+                        backgroundColor:
+                          theme.palette.mode === "dark"
+                            ? "rgba(0, 0, 0, 0.9)"
+                            : "rgba(255, 255, 255, 0.95)",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        whiteSpace: "nowrap",
+                        pointerEvents: "none",
+                        zIndex: 2,
+                        border: "1px solid #f50057",
+                      }}
+                    >
+                      {skill.level}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        fontSize: "10px",
+                        textAlign: "center",
+                        color: theme.palette.text.secondary,
+                        fontWeight: 500,
+                        marginTop: 0.5,
+                      }}
+                    >
+                      {skill.name}
+                    </Typography>
                   </Box>
                 ))}
               </Box>
