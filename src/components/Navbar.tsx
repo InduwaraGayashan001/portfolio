@@ -1,7 +1,6 @@
 import {
   AppBar,
   Box,
-  Button,
   IconButton,
   Toolbar,
   Typography,
@@ -11,11 +10,11 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface NavbarProps {
   toggleTheme: () => void;
@@ -24,16 +23,66 @@ interface NavbarProps {
 
 export default function Navbar({ toggleTheme, mode }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Skills", path: "/skills" },
-    { label: "Projects", path: "/projects" },
-    { label: "Achievements", path: "/achievements" },
-    { label: "Milestones", path: "/milestones" },
-    { label: "Contact", path: "/contact" },
+    { label: "Home", section: "home" },
+    { label: "About", section: "about" },
+    { label: "Skills", section: "skills" },
+    { label: "Projects", section: "projects" },
+    { label: "Achievements", section: "achievements" },
+    { label: "Milestones", section: "milestones" },
+    { label: "Contact", section: "contact" },
   ];
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      return;
+    }
+
+    const handleScroll = () => {
+      const sections = menuItems.map((item) => item.section);
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location.pathname]);
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const yOffset = -70; // Navbar height
+          const y =
+            element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const yOffset = -70; // Navbar height
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -92,31 +141,41 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
         {/* Desktop Menu */}
         <Box
           sx={{
-            display: { xs: "none", md: "flex", gap: "20px" },
+            display: { xs: "none", md: "flex", gap: "30px" },
             alignItems: "center",
           }}
         >
-          <Button component={Link} to="/" variant="outlined">
-            Home
-          </Button>
-          <Button component={Link} to="/about" variant="outlined">
-            About
-          </Button>
-          <Button component={Link} to="/skills" variant="outlined">
-            Skills
-          </Button>
-          <Button component={Link} to="/projects" variant="outlined">
-            Projects
-          </Button>
-          <Button component={Link} to="/achievements" variant="outlined">
-            Achievements
-          </Button>
-          <Button component={Link} to="/milestones" variant="outlined">
-            Milestones
-          </Button>
-          <Button component={Link} to="/contact" variant="outlined">
-            Contact
-          </Button>
+          {menuItems.map((item) => (
+            <Typography
+              key={item.section}
+              onClick={() => scrollToSection(item.section)}
+              sx={{
+                cursor: "pointer",
+                position: "relative",
+                fontSize: "1rem",
+                fontWeight: activeSection === item.section ? "bold" : "normal",
+                color: "#f50057",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  color: "#f50057",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: -4,
+                  left: 0,
+                  width: "100%",
+                  height: "2px",
+                  backgroundColor: "#f50057",
+                  transform:
+                    activeSection === item.section ? "scaleX(1)" : "scaleX(0)",
+                  transition: "transform 0.3s ease",
+                },
+              }}
+            >
+              {item.label}
+            </Typography>
+          ))}
           <IconButton
             onClick={toggleTheme}
             color="inherit"
@@ -170,12 +229,13 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
               {menuItems.map((item) => (
                 <ListItem key={item.label} disablePadding>
                   <ListItemButton
-                    component={Link}
-                    to={item.path}
-                    onClick={toggleMobileMenu}
+                    onClick={() => {
+                      scrollToSection(item.section);
+                      toggleMobileMenu();
+                    }}
                     sx={{
                       "&:hover": {
-                        backgroundColor: "rgba(245, 0, 87, 0.1)",
+                        backgroundColor: "rgba(245, 0, 87, 0.05)",
                       },
                     }}
                   >
@@ -183,9 +243,22 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
                       primary={item.label}
                       sx={{
                         textAlign: "center",
+                        position: "relative",
                         "& .MuiTypography-root": {
-                          fontWeight: 500,
+                          fontWeight:
+                            activeSection === item.section ? "bold" : 500,
                           color: mode === "dark" ? "#fff" : "#000",
+                        },
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          bottom: 0,
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          width: activeSection === item.section ? "60%" : "0%",
+                          height: "2px",
+                          backgroundColor: "#f50057",
+                          transition: "width 0.3s ease",
                         },
                       }}
                     />

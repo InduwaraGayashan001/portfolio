@@ -22,25 +22,25 @@ function Portfolio() {
 
   return (
     <Box>
-      <Box sx={{ backgroundColor: bgColor1 }}>
+      <Box id="home" sx={{ backgroundColor: bgColor1 }}>
         <HeroSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor2 }}>
+      <Box id="about" sx={{ backgroundColor: bgColor2 }}>
         <AboutSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor1 }}>
+      <Box id="skills" sx={{ backgroundColor: bgColor1 }}>
         <SkillsSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor2 }}>
+      <Box id="projects" sx={{ backgroundColor: bgColor2 }}>
         <ProjectsSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor1 }}>
+      <Box id="achievements" sx={{ backgroundColor: bgColor1 }}>
         <AchievementsSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor2 }}>
+      <Box id="milestones" sx={{ backgroundColor: bgColor2 }}>
         <MilestonesSection />
       </Box>
-      <Box sx={{ backgroundColor: bgColor1 }}>
+      <Box id="contact" sx={{ backgroundColor: bgColor1 }}>
         <ContactSection />
       </Box>
     </Box>
