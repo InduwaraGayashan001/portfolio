@@ -42,11 +42,16 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
-              transition: "all 0.3s ease",
+              transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+              animation: "floatIn 0.8s ease-out",
+              "@keyframes floatIn": {
+                "0%": { opacity: 0, transform: "translateY(30px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
               "&:hover": {
                 backgroundColor: "rgba(245, 0, 87, 0.1)",
-                transform: "translateY(-3px)",
-                boxShadow: "0 4px 12px rgba(245, 0, 87, 0.2)",
+                transform: "translateY(-8px) scale(1.02)",
+                boxShadow: "0 8px 24px rgba(245, 0, 87, 0.3)",
               },
             }}
           >
@@ -150,11 +155,16 @@ function ContactSection() {
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
               textDecoration: "none",
-              transition: "all 0.3s ease",
+              transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+              animation: "slideUp 0.6s ease-out 0.3s backwards",
+              "@keyframes slideUp": {
+                "0%": { opacity: 0, transform: "translateY(40px) scale(0.8)" },
+                "100%": { opacity: 1, transform: "translateY(0) scale(1)" },
+              },
               "&:hover": {
-                backgroundColor: "rgba(245, 0, 87, 0.1)",
-                transform: "translateY(-3px)",
-                boxShadow: "0 4px 12px rgba(245, 0, 87, 0.2)",
+                backgroundColor: "rgba(245, 0, 87, 0.15)",
+                transform: "translateY(-8px) scale(1.05) rotate(2deg)",
+                boxShadow: "0 8px 24px rgba(245, 0, 87, 0.4)",
               },
             }}
           >

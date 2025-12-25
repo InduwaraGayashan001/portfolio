@@ -126,9 +126,18 @@ export const MilestonesSection = () => {
               data-index={index}
               sx={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(50px)",
-                transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-                transitionDelay: `${index * 0.15}s`,
+                transform: isVisible
+                  ? "translateX(0) scale(1)"
+                  : index % 2 === 0
+                  ? "translateX(-100px) scale(0.8)"
+                  : "translateX(100px) scale(0.8)",
+                transition: `all 1s cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                  index * 0.2
+                }s`,
+                "&:hover": {
+                  transform: "translateX(0) scale(1.03)",
+                  transition: "all 0.3s ease",
+                },
               }}
             >
               <TimelineOppositeContent
@@ -185,6 +194,23 @@ export const MilestonesSection = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "all 0.3s ease",
+                    animation: isVisible
+                      ? "glowPulse 2s ease-in-out infinite"
+                      : "none",
+                    "@keyframes glowPulse": {
+                      "0%, 100%": {
+                        boxShadow: `0 0 20px ${milestoneColor}60`,
+                        transform: "scale(1)",
+                      },
+                      "50%": {
+                        boxShadow: `0 0 40px ${milestoneColor}, 0 0 60px ${milestoneColor}80`,
+                        transform: "scale(1.1)",
+                      },
+                    },
+                    "&:hover": {
+                      transform: "scale(1.15) rotate(10deg)",
+                      boxShadow: `0 0 50px ${milestoneColor}`,
+                    },
                   }}
                 >
                   <milestone.icon

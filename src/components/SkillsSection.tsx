@@ -167,11 +167,12 @@ function SkillsSection() {
               data-index={index}
               sx={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(50px)",
+                transform: isVisible
+                  ? "translateY(0) rotate(0deg)"
+                  : "translateY(80px) rotate(-5deg)",
                 transition: isVisible
-                  ? "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)"
+                  ? `all 1s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.2}s`
                   : "all 0.3s ease",
-                transitionDelay: `${index * 0.1}s`,
                 backgroundColor:
                   theme.palette.mode === "dark"
                     ? "rgba(30, 30, 30, 0.6)"
@@ -184,9 +185,10 @@ function SkillsSection() {
                     ? "1px solid rgba(255, 255, 255, 0.1)"
                     : "1px solid rgba(0, 0, 0, 0.1)",
                 "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: "0 8px 24px rgba(245, 0, 87, 0.3)",
+                  transform: "translateY(-10px) scale(1.03)",
+                  boxShadow: "0 20px 40px rgba(245, 0, 87, 0.3)",
                   border: "1px solid rgba(245, 0, 87, 0.4)",
+                  transition: "all 0.3s ease",
                 },
               }}
             >
@@ -217,7 +219,7 @@ function SkillsSection() {
                   <Box
                     key={skill.name}
                     sx={{
-                      width:  "70px",
+                      width: "70px",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
@@ -229,8 +231,8 @@ function SkillsSection() {
                   >
                     <Box
                       sx={{
-                        width:"50px",
-                        height:"50px",
+                        width: "50px",
+                        height: "50px",
                         position: "relative",
                         display: "flex",
                         alignItems: "center",
@@ -252,6 +254,18 @@ function SkillsSection() {
                             width: "100%",
                             height: "100%",
                             objectFit: "contain",
+                            transition: "all 0.3s ease",
+                          }}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform =
+                              "scale(1.2) rotate(5deg)";
+                            e.currentTarget.style.filter =
+                              "drop-shadow(0 0 10px rgba(245, 0, 87, 0.5))";
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform =
+                              "scale(1) rotate(0deg)";
+                            e.currentTarget.style.filter = "none";
                           }}
                         />
                       ) : (
