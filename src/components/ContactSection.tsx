@@ -143,7 +143,7 @@ function ContactSection() {
         >
           <Box
             component="a"
-            href="https://linkedin.com/in/induwaragayashan"
+            href="https://www.linkedin.com/in/induwara-gayashan-78812a277/"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
