@@ -18,6 +18,7 @@ function ContactSection() {
   return (
     <SectionWrapper title="Contact Me">
       <Box
+        id="contact"
         sx={{
           maxWidth: "800px",
           margin: "0 auto",

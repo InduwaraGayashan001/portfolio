@@ -53,15 +53,17 @@ function AboutSection() {
             transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s",
           }}
         >
-          I am an Electronic and Telecommunication Engineering undergraduate at
-          the University of Moratuwa with a strong passion for AI, embedded
-          systems, and software development. I enjoy building innovative
-          solutions that integrate machine learning, computer vision, IoT, and
-          full-stack development to address real-world challenges. I thrive in
-          collaborative environments, enjoy leading and contributing to teams,
-          and am always eager to learn and explore emerging technologies.
-          Currently, I’m expanding my skills in advanced ML and AI techniques,
-          data pipelines and data engineering, and full-stack web development.
+          Final-year Electronic & Telecommunication Engineering student at
+          University of Moratuwa with a strong focus on artificial intelligence,
+          machine learning, and full-stack development. Passionate about
+          building intelligent systems that solve real-world problems through
+          innovative applications of computer vision, natural language
+          processing, and deep learning. Experienced in developing end-to-end
+          solutions from concept to deployment, with hands-on expertise in cloud
+          technologies, microservices architecture, and modern development
+          practices. Committed to continuous learning and contributing to
+          impactful projects that advance the field of AI and software
+          engineering.
         </Typography>
       </Box>
     </SectionWrapper>

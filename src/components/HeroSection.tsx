@@ -1,6 +1,6 @@
 import { Box, Button, Typography, SvgIcon } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { GitHub, LinkedIn } from "@mui/icons-material";
+import { useState, useEffect } from "react";
 
 const MediumIcon = (props: any) => (
   <SvgIcon {...props} viewBox="0 0 24 24">
@@ -17,7 +17,44 @@ const fadeIn = {
 };
 
 function HeroSection() {
-  const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const texts = [
+    "Electronic & Telecommunication Engineering Student",
+    "AI & ML Enthusiast",
+  ];
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = 1500;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && displayText === currentText) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && displayText === "") {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+      } else {
+        setDisplayText(
+          isDeleting
+            ? currentText.substring(0, displayText.length - 1)
+            : currentText.substring(0, displayText.length + 1)
+        );
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, textIndex]);
 
   return (
     <Box
@@ -77,17 +114,31 @@ function HeroSection() {
           gutterBottom
           sx={{
             ...fadeIn,
-            mb: { xs: 1, md: 3 },
-            mt: { xs: 1, md: 3 },
+            mb: { xs: 1, md: 0 },
+            mt: { xs: 1, md: 1 },
             fontSize: { xs: 20, md: 30 },
+            minHeight: { xs: "60px", md: "90px" },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {""}
           <Box component="span" sx={{ display: { xs: "none", md: "inline" } }}>
-            Electronic & Telecommunication Engineering Student
+            {displayText}
+            <Box
+              component="span"
+              sx={{
+                borderRight: "3px solid #f50057",
+                animation: "blink 1s step-end infinite",
+                "@keyframes blink": {
+                  "0%, 100%": { borderColor: "transparent" },
+                  "50%": { borderColor: "#f50057" },
+                },
+              }}
+            />
           </Box>
           <Box component="span" sx={{ display: { xs: "inline", md: "none" } }}>
-            ENTC Student
+            {textIndex === 0 ? "ENTC Student" : "AI & ML Enthusiast"}
           </Box>
         </Typography>
         <Box
@@ -96,7 +147,7 @@ function HeroSection() {
             alignItems: "center",
             justifyContent: "center",
             gap: 1,
-            mb: 2,
+            mb: 3,
           }}
         >
           <img
@@ -213,7 +264,7 @@ function HeroSection() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mt: 1 }}>
           <Button
             variant="contained"
-            onClick={() => navigate("/contact")}
+            onClick={scrollToContact}
             sx={{ fontSize: 15 }}
           >
             Contact Me
