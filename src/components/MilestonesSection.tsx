@@ -72,7 +72,7 @@ export const MilestonesSection = () => {
       title: "WSO2 Internship",
       description: "Software Engineer Intern at WSO2 Integration team",
       icon: WorkIcon,
-      image: "/portfolio/images/wso2t.png",
+      image: "/portfolio/images/wso2.png",
     },
   ];
 
@@ -296,8 +296,9 @@ export const MilestonesSection = () => {
                     gap: 1,
                     backgroundColor:
                       theme.palette.mode === "dark"
-                        ? "rgba(0, 0, 0, 0.95)"
+                        ? "rgba(0, 0, 0, 0.3)"
                         : "rgba(255, 255, 255, 0.98)",
+                    backdropFilter: "blur(10px)",
                     padding: { xs: 1, md: 2 },
                     borderRadius: { xs: "8px", md: "12px" },
                     border: `1px solid ${milestoneColor}`,

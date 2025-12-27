@@ -30,6 +30,7 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
   const menuItems = [
     { label: "Home", section: "home" },
     { label: "About", section: "about" },
+    { label: "Experience", section: "experience" },
     { label: "Skills", section: "skills" },
     { label: "Projects", section: "projects" },
     { label: "Achievements", section: "achievements" },
@@ -90,7 +91,7 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
 
   return (
     <AppBar position="fixed" sx={{ height: "70px", justifyContent: "center" }}>
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between",backdropFilter: "blur(10px)" }}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography
             variant="h6"

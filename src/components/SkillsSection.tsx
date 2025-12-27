@@ -175,7 +175,7 @@ function SkillsSection() {
                   : "all 0.3s ease",
                 backgroundColor:
                   theme.palette.mode === "dark"
-                    ? "rgba(30, 30, 30, 0.6)"
+                    ? "rgba(30, 30, 30, 0.3)"
                     : "rgba(255, 255, 255, 0.6)",
                 backdropFilter: "blur(10px)",
                 borderRadius: "16px",

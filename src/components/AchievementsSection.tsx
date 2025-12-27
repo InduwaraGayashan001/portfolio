@@ -110,8 +110,9 @@ export const AchievementsSection = () => {
                   marginRight: isRight ? "-120px" : 0,
                   backgroundColor:
                     theme.palette.mode === "dark"
-                      ? "rgba(30, 30, 30, 0.8)"
+                      ? "rgba(30, 30, 30, 0.3)"
                       : "rgba(255, 255, 255, 0.9)",
+                  backdropFilter: "blur(10px)",
                   p: 2,
                   transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                   transform: isCenter

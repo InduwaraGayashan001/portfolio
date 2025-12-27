@@ -17,13 +17,12 @@ const fadeIn = {
 };
 
 function HeroSection() {
-  const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const texts = [
     "Electronic & Telecommunication Engineering Student",
-    "AI & ML Enthusiast",
+    "AI/ML & Computer Vision Enthusiast",
   ];
 
   const scrollToContact = () => {
@@ -34,27 +33,20 @@ function HeroSection() {
   };
 
   useEffect(() => {
-    const currentText = texts[textIndex];
-    const typingSpeed = isDeleting ? 50 : 100;
-    const pauseTime = 1500;
+    const fadeOutTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 2750); // Show for 3 seconds
 
-    const timer = setTimeout(() => {
-      if (!isDeleting && displayText === currentText) {
-        setTimeout(() => setIsDeleting(true), pauseTime);
-      } else if (isDeleting && displayText === "") {
-        setIsDeleting(false);
-        setTextIndex((prev) => (prev + 1) % texts.length);
-      } else {
-        setDisplayText(
-          isDeleting
-            ? currentText.substring(0, displayText.length - 1)
-            : currentText.substring(0, displayText.length + 1)
-        );
-      }
-    }, typingSpeed);
+    const changeTextTimer = setTimeout(() => {
+      setTextIndex((prev) => (prev + 1) % texts.length);
+      setIsVisible(true);
+    }, 3500); // Wait for fade out (500ms) then change
 
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, textIndex]);
+    return () => {
+      clearTimeout(fadeOutTimer);
+      clearTimeout(changeTextTimer);
+    };
+  }, [textIndex]);
 
   return (
     <Box
@@ -121,24 +113,17 @@ function HeroSection() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            fontWeight: "bold",
           }}
         >
-          <Box component="span" sx={{ display: { xs: "none", md: "inline" } }}>
-            {displayText}
-            <Box
-              component="span"
-              sx={{
-                borderRight: "3px solid #f50057",
-                animation: "blink 1s step-end infinite",
-                "@keyframes blink": {
-                  "0%, 100%": { borderColor: "transparent" },
-                  "50%": { borderColor: "#f50057" },
-                },
-              }}
-            />
-          </Box>
-          <Box component="span" sx={{ display: { xs: "inline", md: "none" } }}>
-            {textIndex === 0 ? "ENTC Student" : "AI & ML Enthusiast"}
+          <Box
+            component="span"
+            sx={{
+              opacity: isVisible ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
+            {texts[textIndex]}
           </Box>
         </Typography>
         <Box

@@ -94,6 +94,7 @@ export default function App() {
                 ? `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url("/portfolio/images/background.png")`
                 : `url("/portfolio/images/background2.png")`,
             backgroundSize: "100% auto",
+            backdropFilter: "blur(10px)",
             backgroundPosition: "top center",
             backgroundRepeat: "repeat-y",
             transition: "background-image 0.3s ease",

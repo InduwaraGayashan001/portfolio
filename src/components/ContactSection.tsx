@@ -43,6 +43,7 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
+              backdropFilter: "blur(10px)",
               transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
               animation: "floatIn 0.8s ease-out",
               "@keyframes floatIn": {
@@ -71,6 +72,7 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
+              backdropFilter: "blur(10px)",
               transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "rgba(245, 0, 87, 0.1)",
@@ -96,6 +98,7 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
+              backdropFilter: "blur(10px)",
               transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "rgba(245, 0, 87, 0.1)",
@@ -119,6 +122,7 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
+              backdropFilter: "blur(10px)",
               transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "rgba(245, 0, 87, 0.1)",
@@ -154,6 +158,7 @@ function ContactSection() {
               padding: "12px 24px",
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
+              backdropFilter: "blur(10px)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
               textDecoration: "none",
               transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -190,6 +195,7 @@ function ContactSection() {
               border: "1px solid rgba(245, 0, 87, 0.2)",
               textDecoration: "none",
               transition: "all 0.3s ease",
+              backdropFilter: "blur(10px)",
               "&:hover": {
                 backgroundColor: "rgba(245, 0, 87, 0.1)",
                 transform: "translateY(-3px)",
@@ -215,6 +221,7 @@ function ContactSection() {
               borderRadius: "12px",
               backgroundColor: "rgba(245, 0, 87, 0.05)",
               border: "1px solid rgba(245, 0, 87, 0.2)",
+              backdropFilter: "blur(10px)",
               textDecoration: "none",
               transition: "all 0.3s ease",
               "&:hover": {

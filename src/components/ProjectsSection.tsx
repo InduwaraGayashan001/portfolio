@@ -8,7 +8,12 @@ import {
   IconButton,
   useTheme,
 } from "@mui/material";
-import { GitHub, ChevronLeft, ChevronRight, LinkRounded } from "@mui/icons-material";
+import {
+  GitHub,
+  ChevronLeft,
+  ChevronRight,
+  LinkRounded,
+} from "@mui/icons-material";
 import SectionWrapper from "./SectionWrapper";
 
 export const ProjectsSection = () => {
@@ -18,6 +23,39 @@ export const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Movie Recommendation System",
+      description:
+        "Developed a movie recommendation system using collaborative filtering to suggest movies based on user preferences and movie similarities",
+      image: "/portfolio/images/movie.png",
+      tech: ["Python", "Flask", "TypeScript", "React"],
+      github:
+        "https://github.com/InduwaraGayashan001/Movie-Recommendation-System.git",
+      demo: "#",
+      type: "Individual Project",
+    },
+    {
+      title: "ClariFi - Medical Report/Scan Analyzing Assistant AI",
+      description:
+        "AI-powered assistant for analyzing medical reports and scans, providing automated suggestions to users.",
+      image: "/portfolio/images/ClariFi.png",
+      tech: ["JavaScript", "React Native", "Python", "Django", "LLaMA"],
+      github:
+        "https://github.com/Tronictos/ClariFi-Medical-Report-Analysis-System",
+      demo: "#",
+      type: "Group Project",
+    },
+    {
+      title: "Financial Stock Assistant",
+      description:
+        "Developed an AI-powered stock analysis tool using RAG technology to provide data-driven financial insights",
+      image: "/portfolio/images/stock.png",
+      tech: ["Python", "Streamlit", "LangChain", "OpenAI", "ChromaDB"],
+      github:
+        "https://github.com/InduwaraGayashan001/Financial-Stock-Assistant",
+      demo: "#",
+      type: "Individual Project",
+    },
+    {
       title: "PowerLens - Transformer Maintenance Record Keeper",
       description:
         "AI-assisted transformer inspection platform for thermal anomaly detection with automated digital maintenance reporting",
@@ -26,6 +64,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/SamudraUduwaka/Transformer-maintenance-record-keeper-team-backslash",
       demo: "#",
+      type: "Group Project",
     },
     {
       title: "CodeVision AI - Intelligent Source Code Analyzer",
@@ -35,6 +74,7 @@ export const ProjectsSection = () => {
       tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Chroma"],
       github: "https://github.com/InduwaraGayashan001/Source-Code-Analyzer",
       demo: "#",
+      type: "Individual Project",
     },
     {
       title: "MediBot - AI Medical Assistant",
@@ -44,6 +84,7 @@ export const ProjectsSection = () => {
       tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Pinecone"],
       github: "https://github.com/InduwaraGayashan001/Medical-Chatbot",
       demo: "#",
+      type: "Individual Project",
     },
     {
       title: "Real Estate Booking System",
@@ -54,6 +95,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/Real-State-Booking-System",
       demo: "#",
+      type: "Individual Project",
     },
     {
       title: "IntelliPrep - Q&A Creator",
@@ -72,15 +114,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/Interview-Questions-Creator",
       demo: "#",
-    },
-    {
-      title: "Ballerina ETL Package",
-      description:
-        "ETL package providing APIs for data categorization, cleaning, enrichment, filtering, security, and unstructured data extraction",
-      image: "/portfolio/images/etl.png",
-      tech: ["Ballerina", "Java", "OpenAI"],
-      github: "https://github.com/ballerina-platform/module-ballerina-etl",
-      demo: "#",
+      type: "Individual Project",
     },
     {
       title: "RFID Based Inventory Management System",
@@ -91,6 +125,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/RFID-Based-Inventory-Managemet-System-",
       demo: "#",
+      type: "Group Project",
     },
     {
       title: "Vision Based Label Placement Verification",
@@ -101,6 +136,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
       demo: "#",
+      type: "Group Project",
     },
     {
       title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
@@ -111,6 +147,7 @@ export const ProjectsSection = () => {
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_innovation-engineering-teamwork-activity-7116061212747984896-S9nK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
+      type: "Group Project",
     },
     {
       title: "High Frequency Power Amplifier",
@@ -121,6 +158,7 @@ export const ProjectsSection = () => {
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_analogproject-electronics-highfrequencyamplifier-activity-7166884275240251392-_tSb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
+      type: "Group Project",
     },
   ];
 
@@ -294,17 +332,41 @@ export const ProjectsSection = () => {
                       minHeight: "40px",
                     }}
                   >
-                    <Typography
-                      variant="h6"
-                      component="h3"
-                      sx={{
-                        fontWeight: "bold",
-                        fontSize: "1rem",
-                        flex: 1,
-                      }}
-                    >
-                      {project.title}
-                    </Typography>
+                    <Box sx={{ flex: 1 }}>
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        sx={{
+                          fontWeight: "bold",
+                          fontSize: "1rem",
+                        }}
+                      >
+                        {project.title}
+                      </Typography>
+                      {project.type && (
+                        <Chip
+                          label={project.type}
+                          size="small"
+                          sx={{
+                            mt: 0.5,
+                            backgroundColor:
+                              project.type === "Individual Project"
+                                ? "rgba(76, 175, 80, 0.1)"
+                                : "rgba(33, 150, 243, 0.1)",
+                            color:
+                              project.type === "Individual Project"
+                                ? "#4caf50"
+                                : "#2196f3",
+                            border:
+                              project.type === "Individual Project"
+                                ? "1px solid rgba(76, 175, 80, 0.3)"
+                                : "1px solid rgba(33, 150, 243, 0.3)",
+                            fontWeight: 600,
+                            fontSize: "0.65rem",
+                          }}
+                        />
+                      )}
+                    </Box>
                     <IconButton
                       href={project.github}
                       target="_blank"
@@ -424,13 +486,38 @@ export const ProjectsSection = () => {
                     minHeight: "64px",
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    component="h3"
-                    sx={{ fontWeight: "bold", flex: 1 }}
-                  >
-                    {project.title}
-                  </Typography>
+                  <Box sx={{ flex: 1 }}>
+                    <Typography
+                      variant="h5"
+                      component="h3"
+                      sx={{ fontWeight: "bold" }}
+                    >
+                      {project.title}
+                    </Typography>
+                    {project.type && (
+                      <Chip
+                        label={project.type}
+                        size="small"
+                        sx={{
+                          mt: 1,
+                          backgroundColor:
+                            project.type === "Individual Project"
+                              ? "rgba(76, 175, 80, 0.1)"
+                              : "rgba(33, 150, 243, 0.1)",
+                          color:
+                            project.type === "Individual Project"
+                              ? "#4caf50"
+                              : "#2196f3",
+                          border:
+                            project.type === "Individual Project"
+                              ? "1px solid rgba(76, 175, 80, 0.3)"
+                              : "1px solid rgba(33, 150, 243, 0.3)",
+                          fontWeight: 600,
+                          fontSize: "0.75rem",
+                        }}
+                      />
+                    )}
+                  </Box>
                   <IconButton
                     href={project.github}
                     target="_blank"
