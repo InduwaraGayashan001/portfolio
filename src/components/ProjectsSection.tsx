@@ -12,7 +12,7 @@ import {
   GitHub,
   ChevronLeft,
   ChevronRight,
-  LinkRounded,
+  LinkedIn,
 } from "@mui/icons-material";
 import SectionWrapper from "./SectionWrapper";
 
@@ -23,40 +23,17 @@ export const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "Movie Recommendation System",
+      title: "NeoCare - Contactless Neonatal Health Monitoring System",
       description:
-        "Developed a movie recommendation system using collaborative filtering to suggest movies based on user preferences and movie similarities",
-      image: "/portfolio/images/movie.png",
-      tech: ["Python", "Flask", "TypeScript", "React"],
-      github:
-        "https://github.com/InduwaraGayashan001/Movie-Recommendation-System.git",
+        "Contactless neonatal monitoring system estimating heart rate, blood oxygen level (SpO2), and jaundice status using remote photoplethysmography and deep learning, with privacy-preserving video processing",
+      image: "/portfolio/images/neocare.png",
+      tech: ["Python", "PyTorch", "OpenCV", "YOLO11", "PhysNet", "MobileNet"],
+      github: "https://github.com/NeoCare-ENTC",
       demo: "#",
-      type: "Individual Project",
+      type: "Group",
     },
     {
-      title: "ClariFi - Medical Report/Scan Analyzing Assistant AI",
-      description:
-        "AI-powered assistant for analyzing medical reports and scans, providing automated suggestions to users.",
-      image: "/portfolio/images/ClariFi.png",
-      tech: ["JavaScript", "React Native", "Python", "Django", "LLaMA"],
-      github:
-        "https://github.com/Tronictos/ClariFi-Medical-Report-Analysis-System",
-      demo: "#",
-      type: "Group Project",
-    },
-    {
-      title: "Financial Stock Assistant",
-      description:
-        "Developed an AI-powered stock analysis tool using RAG technology to provide data-driven financial insights",
-      image: "/portfolio/images/stock.png",
-      tech: ["Python", "Streamlit", "LangChain", "OpenAI", "ChromaDB"],
-      github:
-        "https://github.com/InduwaraGayashan001/Financial-Stock-Assistant",
-      demo: "#",
-      type: "Individual Project",
-    },
-    {
-      title: "PowerLens - Transformer Maintenance Record Keeper",
+      title: "PowerLens - Transformer Maintenance System",
       description:
         "AI-assisted transformer inspection platform for thermal anomaly detection with automated digital maintenance reporting",
       image: "/portfolio/images/powerlens.png",
@@ -64,38 +41,27 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/SamudraUduwaka/Transformer-maintenance-record-keeper-team-backslash",
       demo: "#",
-      type: "Group Project",
+      type: "Group",
     },
     {
-      title: "CodeVision AI - Intelligent Source Code Analyzer",
+      title: "CodeVision AI - Source Code Analyzer",
       description:
         "AI-powered web application for intelligent analysis and exploration of GitHub repositories through natural language conversations",
       image: "/portfolio/images/code analyzer.png",
       tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Chroma"],
       github: "https://github.com/InduwaraGayashan001/Source-Code-Analyzer",
       demo: "#",
-      type: "Individual Project",
+      type: "Individual",
     },
     {
       title: "MediBot - AI Medical Assistant",
       description:
         "AI-powered medical chatbot providing accurate health information using RAG technology and curated medical knowledge base",
-      image: "/portfolio/images/medibot.png",
+      image: "/portfolio/images/medi_bot.png",
       tech: ["Python", "Flask", "OpenAI", "LangChain", "Bootstrap", "Pinecone"],
       github: "https://github.com/InduwaraGayashan001/Medical-Chatbot",
       demo: "#",
-      type: "Individual Project",
-    },
-    {
-      title: "Real Estate Booking System",
-      description:
-        "Real Estate Booking System using MERN stack with integrated chat feature for seamless user interaction",
-      image: "/portfolio/images/realstate.png",
-      tech: ["JavaScript", "React", "Node.js", "MongoDB"],
-      github:
-        "https://github.com/InduwaraGayashan001/Real-State-Booking-System",
-      demo: "#",
-      type: "Individual Project",
+      type: "Individual",
     },
     {
       title: "IntelliPrep - Q&A Creator",
@@ -114,7 +80,29 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/Interview-Questions-Creator",
       demo: "#",
-      type: "Individual Project",
+      type: "Individual",
+    },
+    {
+      title: "Financial Stock Assistant",
+      description:
+        "Developed an AI-powered stock analysis tool using RAG technology to provide data-driven financial insights",
+      image: "/portfolio/images/stock.png",
+      tech: ["Python", "Streamlit", "LangChain", "OpenAI", "ChromaDB"],
+      github:
+        "https://github.com/InduwaraGayashan001/Financial-Stock-Assistant",
+      demo: "#",
+      type: "Individual",
+    },
+    {
+      title: "Real Estate Booking System",
+      description:
+        "Real Estate Booking System using MERN stack with integrated chat feature for seamless user interaction",
+      image: "/portfolio/images/realstateb.png",
+      tech: ["JavaScript", "React", "Node.js", "MongoDB"],
+      github:
+        "https://github.com/InduwaraGayashan001/Real-State-Booking-System",
+      demo: "#",
+      type: "Individual",
     },
     {
       title: "RFID Based Inventory Management System",
@@ -125,7 +113,29 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/RFID-Based-Inventory-Managemet-System-",
       demo: "#",
-      type: "Group Project",
+      type: "Group",
+    },
+    {
+      title: "ClariFi - Medical Report Analyzing Assistant",
+      description:
+        "AI-powered assistant for analyzing medical reports and scans, providing automated suggestions to users.",
+      image: "/portfolio/images/ClariFi.png",
+      tech: ["JavaScript", "React Native", "Python", "Django", "LLaMA"],
+      github:
+        "https://github.com/Tronictos/ClariFi-Medical-Report-Analysis-System",
+      demo: "#",
+      type: "Group",
+    },
+    {
+      title: "Movie Recommendation System",
+      description:
+        "Developed a movie recommendation system using collaborative filtering to suggest movies based on user preferences and movie similarities",
+      image: "/portfolio/images/movie.png",
+      tech: ["Python", "Flask", "TypeScript", "React"],
+      github:
+        "https://github.com/InduwaraGayashan001/Movie-Recommendation-System.git",
+      demo: "#",
+      type: "Individual",
     },
     {
       title: "Vision Based Label Placement Verification",
@@ -136,7 +146,7 @@ export const ProjectsSection = () => {
       github:
         "https://github.com/InduwaraGayashan001/Misprinted-Label-Detection",
       demo: "#",
-      type: "Group Project",
+      type: "Group",
     },
     {
       title: "SelfoDryer - Sun-Seeking Solar Dryer Robot",
@@ -147,7 +157,7 @@ export const ProjectsSection = () => {
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_innovation-engineering-teamwork-activity-7116061212747984896-S9nK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
-      type: "Group Project",
+      type: "Group",
     },
     {
       title: "High Frequency Power Amplifier",
@@ -158,7 +168,7 @@ export const ProjectsSection = () => {
       github:
         "https://www.linkedin.com/posts/induwara-gayashan-78812a277_analogproject-electronics-highfrequencyamplifier-activity-7166884275240251392-_tSb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEN45dgBN2vfSFSzJQauYp7PjTC9ErqUYRo",
       demo: "#",
-      type: "Group Project",
+      type: "Group",
     },
   ];
 
@@ -332,56 +342,39 @@ export const ProjectsSection = () => {
                       minHeight: "40px",
                     }}
                   >
-                    <Box sx={{ flex: 1 }}>
-                      <Typography
-                        variant="h6"
-                        component="h3"
-                        sx={{
-                          fontWeight: "bold",
-                          fontSize: "1rem",
-                        }}
-                      >
-                        {project.title}
-                      </Typography>
-                      {project.type && (
-                        <Chip
-                          label={project.type}
-                          size="small"
-                          sx={{
-                            mt: 0.5,
-                            backgroundColor:
-                              project.type === "Individual Project"
-                                ? "rgba(76, 175, 80, 0.1)"
-                                : "rgba(33, 150, 243, 0.1)",
-                            color:
-                              project.type === "Individual Project"
-                                ? "#4caf50"
-                                : "#2196f3",
-                            border:
-                              project.type === "Individual Project"
-                                ? "1px solid rgba(76, 175, 80, 0.3)"
-                                : "1px solid rgba(33, 150, 243, 0.3)",
-                            fontWeight: 600,
-                            fontSize: "0.65rem",
-                          }}
-                        />
-                      )}
-                    </Box>
-                    <IconButton
-                      href={project.github}
-                      target="_blank"
-                      size="small"
+                    <Typography
+                      variant="h6"
+                      component="h3"
                       sx={{
-                        backgroundColor: "rgba(245, 0, 87, 0.1)",
-                        color: "#f50057",
-                        "&:hover": {
-                          backgroundColor: "rgba(245, 0, 87, 0.2)",
-                          transform: "scale(1.1)",
-                        },
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                        flex: 1,
                       }}
                     >
-                      <LinkRounded sx={{ fontSize: "18px" }} />
-                    </IconButton>
+                      {project.title}
+                    </Typography>
+                    {project.type && (
+                      <Chip
+                        label={project.type}
+                        size="small"
+                        sx={{
+                          backgroundColor:
+                            project.type === "Individual Project"
+                              ? "rgba(76, 175, 80, 0.1)"
+                              : "rgba(33, 150, 243, 0.1)",
+                          color:
+                            project.type === "Individual Project"
+                              ? "#4caf50"
+                              : "#2196f3",
+                          border:
+                            project.type === "Individual Project"
+                              ? "1px solid rgba(76, 175, 80, 0.3)"
+                              : "1px solid rgba(33, 150, 243, 0.3)",
+                          fontWeight: 600,
+                          fontSize: "0.65rem",
+                        }}
+                      />
+                    )}
                   </Box>
                   <Typography
                     variant="body2"
@@ -417,6 +410,36 @@ export const ProjectsSection = () => {
                       />
                     ))}
                   </Box>
+                  <IconButton
+                    href={project.github}
+                    target="_blank"
+                    size="small"
+                    sx={{
+                      mt: 0.5,
+                      width: "100%",
+                      color: "#f50057",
+                      borderRadius: "8px",
+                      border: "1px solid #f50057",
+                      "&:hover": {
+                        backgroundColor: "rgba(245, 0, 87, 0.2)",
+                      },
+                    }}
+                  >
+                    {project.title ===
+                      "SelfoDryer - Sun-Seeking Solar Dryer Robot" ||
+                    project.title === "High Frequency Power Amplifier" ? (
+                      <LinkedIn sx={{ fontSize: "16px", mr: 0.5 }} />
+                    ) : (
+                      <GitHub sx={{ fontSize: "16px", mr: 0.5 }} />
+                    )}
+                    <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                      {project.title ===
+                        "SelfoDryer - Sun-Seeking Solar Dryer Robot" ||
+                      project.title === "High Frequency Power Amplifier"
+                        ? "View on LinkedIn"
+                        : "View on GitHub"}
+                    </Typography>
+                  </IconButton>
                 </CardContent>
               </Card>
             );
@@ -494,42 +517,29 @@ export const ProjectsSection = () => {
                     >
                       {project.title}
                     </Typography>
-                    {project.type && (
-                      <Chip
-                        label={project.type}
-                        size="small"
-                        sx={{
-                          mt: 1,
-                          backgroundColor:
-                            project.type === "Individual Project"
-                              ? "rgba(76, 175, 80, 0.1)"
-                              : "rgba(33, 150, 243, 0.1)",
-                          color:
-                            project.type === "Individual Project"
-                              ? "#4caf50"
-                              : "#2196f3",
-                          border:
-                            project.type === "Individual Project"
-                              ? "1px solid rgba(76, 175, 80, 0.3)"
-                              : "1px solid rgba(33, 150, 243, 0.3)",
-                          fontWeight: 600,
-                          fontSize: "0.75rem",
-                        }}
-                      />
-                    )}
                   </Box>
-                  <IconButton
-                    href={project.github}
-                    target="_blank"
-                    sx={{
-                      color: "#f50057",
-                      "&:hover": {
-                        transform: "scale(1.1)",
-                      },
-                    }}
-                  >
-                    <GitHub sx={{ fontSize: "24px" }} />
-                  </IconButton>
+                  {project.type && (
+                    <Chip
+                      label={project.type}
+                      size="small"
+                      sx={{
+                        backgroundColor:
+                          project.type === "Individual Project"
+                            ? "rgba(76, 175, 80, 0.1)"
+                            : "rgba(33, 150, 243, 0.1)",
+                        color:
+                          project.type === "Individual Project"
+                            ? "#4caf50"
+                            : "#2196f3",
+                        border:
+                          project.type === "Individual Project"
+                            ? "1px solid rgba(76, 175, 80, 0.3)"
+                            : "1px solid rgba(33, 150, 243, 0.3)",
+                        fontWeight: 600,
+                        fontSize: "0.75rem",
+                      }}
+                    />
+                  )}
                 </Box>
                 <Typography
                   variant="body2"
@@ -564,6 +574,35 @@ export const ProjectsSection = () => {
                     />
                   ))}
                 </Box>
+                <IconButton
+                  href={project.github}
+                  target="_blank"
+                  sx={{
+                    width: "100%",
+                    backgroundColor: "rgba(245, 0, 87, 0.1)",
+                    color: "#f50057",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(245, 0, 87, 0.3)",
+                    "&:hover": {
+                      backgroundColor: "rgba(245, 0, 87, 0.2)",
+                    },
+                  }}
+                >
+                  {project.title ===
+                    "SelfoDryer - Sun-Seeking Solar Dryer Robot" ||
+                  project.title === "High Frequency Power Amplifier" ? (
+                    <LinkedIn sx={{ fontSize: "16px", mr: 0.5 }} />
+                  ) : (
+                    <GitHub sx={{ fontSize: "16px", mr: 0.5 }} />
+                  )}
+                  <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                    {project.title ===
+                      "SelfoDryer - Sun-Seeking Solar Dryer Robot" ||
+                    project.title === "High Frequency Power Amplifier"
+                      ? "View on LinkedIn"
+                      : "View on GitHub"}
+                  </Typography>
+                </IconButton>
               </CardContent>
             </Card>
           ))}
