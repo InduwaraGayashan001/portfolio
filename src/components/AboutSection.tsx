@@ -151,7 +151,7 @@ function AboutSection() {
             variant="h6"
             sx={{
               fontWeight: "bold",
-              color: "#ffff",
+              color: theme.palette.mode === "dark" ? "#fff" : "#000",
             }}
           >
             Areas of Interest:
