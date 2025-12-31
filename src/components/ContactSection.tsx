@@ -343,6 +343,20 @@ function ContactSection() {
           </Box>
         </Box>
       </Box>
+      
+      {/* Copyright */}
+      <Box
+        sx={{
+          textAlign: "center",
+          mt: 6,
+          pt: 3,
+          borderTop: "1px solid rgba(245, 0, 87, 0.2)",
+        }}
+      >
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          © 2025 Induwara Gayashan. All rights reserved.
+        </Typography>
+      </Box>
     </SectionWrapper>
   );
 }
