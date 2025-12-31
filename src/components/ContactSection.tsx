@@ -1,20 +1,7 @@
-import { Box, Typography, SvgIcon, TextField, Button } from "@mui/material";
-import {
-  Email,
-  Phone,
-  LocationOn,
-  LinkedIn,
-  GitHub,
-  Send,
-} from "@mui/icons-material";
+import { Box, Typography, TextField, Button } from "@mui/material";
+import { Email, Phone, LocationOn, Send } from "@mui/icons-material";
 import SectionWrapper from "./SectionWrapper";
 import { useState } from "react";
-
-const MediumIcon = (props: any) => (
-  <SvgIcon {...props} viewBox="0 0 24 24">
-    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-  </SvgIcon>
-);
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -63,7 +50,7 @@ function ContactSection() {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: 2,
                 padding: 2,
                 borderRadius: "12px",
@@ -78,8 +65,11 @@ function ContactSection() {
                 },
               }}
             >
-              <Email sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Box>
+              <Email sx={{ fontSize: "28px", color: "#f50057", mt: 0.5 }} />
+              <Box sx={{ textAlign: "left" }}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", mb: 0.5 }}>
+                  Email
+                </Typography>
                 <Typography variant="body1">
                   induwaragayashan@gmail.com
                 </Typography>
@@ -89,7 +79,7 @@ function ContactSection() {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: 2,
                 padding: 2,
                 borderRadius: "12px",
@@ -104,8 +94,11 @@ function ContactSection() {
                 },
               }}
             >
-              <Phone sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Box>
+              <Phone sx={{ fontSize: "28px", color: "#f50057", mt: 0.5 }} />
+              <Box sx={{ textAlign: "left" }}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", mb: 0.5 }}>
+                  Phone
+                </Typography>
                 <Typography variant="body1">+94 77 431 6527</Typography>
               </Box>
             </Box>
@@ -113,7 +106,7 @@ function ContactSection() {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: 2,
                 padding: 2,
                 borderRadius: "12px",
@@ -128,105 +121,15 @@ function ContactSection() {
                 },
               }}
             >
-              <LocationOn sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Box>
+              <LocationOn
+                sx={{ fontSize: "28px", color: "#f50057", mt: 0.5 }}
+              />
+              <Box sx={{ textAlign: "left" }}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", mb: 0.5 }}>
+                  Location
+                </Typography>
                 <Typography variant="body1">Ratnapura, Sri Lanka</Typography>
               </Box>
-            </Box>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            <Box
-              component="a"
-              href="https://www.linkedin.com/in/induwara-gayashan-78812a277/"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-                padding: "12px 24px",
-                borderRadius: "12px",
-                backgroundColor: "rgba(245, 0, 87, 0.05)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(245, 0, 87, 0.2)",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "rgba(245, 0, 87, 0.15)",
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 8px 24px rgba(245, 0, 87, 0.4)",
-                },
-              }}
-            >
-              <LinkedIn sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-                LinkedIn
-              </Typography>
-            </Box>
-
-            <Box
-              component="a"
-              href="https://github.com/InduwaraGayashan001"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-                padding: "12px 24px",
-                borderRadius: "12px",
-                backgroundColor: "rgba(245, 0, 87, 0.05)",
-                border: "1px solid rgba(245, 0, 87, 0.2)",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-                backdropFilter: "blur(10px)",
-                "&:hover": {
-                  backgroundColor: "rgba(245, 0, 87, 0.1)",
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 4px 12px rgba(245, 0, 87, 0.2)",
-                },
-              }}
-            >
-              <GitHub sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-                GitHub
-              </Typography>
-            </Box>
-
-            <Box
-              component="a"
-              href="https://medium.com/@induwaragayashan"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-                padding: "12px 24px",
-                borderRadius: "12px",
-                backgroundColor: "rgba(245, 0, 87, 0.05)",
-                border: "1px solid rgba(245, 0, 87, 0.2)",
-                backdropFilter: "blur(10px)",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "rgba(245, 0, 87, 0.1)",
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 4px 12px rgba(245, 0, 87, 0.2)",
-                },
-              }}
-            >
-              <MediumIcon sx={{ fontSize: "28px", color: "#f50057" }} />
-              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-                Medium
-              </Typography>
             </Box>
           </Box>
         </Box>
@@ -244,13 +147,6 @@ function ContactSection() {
             backdropFilter: "blur(10px)",
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{ mb: 3, fontWeight: "bold", color: "#f50057" }}
-          >
-            Send me a message
-          </Typography>
-
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <TextField
               required
@@ -343,7 +239,7 @@ function ContactSection() {
           </Box>
         </Box>
       </Box>
-      
+
       {/* Copyright */}
       <Box
         sx={{
