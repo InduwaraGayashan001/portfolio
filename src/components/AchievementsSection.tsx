@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Box,
   Card,
@@ -12,7 +12,6 @@ import SectionWrapper from "./SectionWrapper";
 
 export const AchievementsSection = () => {
   const [achievementIndex, setAchievementIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const theme = useTheme();
 
   const achievements = [
@@ -37,28 +36,14 @@ export const AchievementsSection = () => {
     },
   ];
 
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setAchievementIndex((prev) => (prev + 1) % achievements.length);
-      }, 4000); // Auto-slide every 4 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [achievementIndex, isPaused, achievements.length]);
-
   const handleNext = () => {
     setAchievementIndex((prev) => (prev + 1) % achievements.length);
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 8000); // Pause for 8 seconds after manual navigation
   };
 
   const handlePrev = () => {
     setAchievementIndex(
       (prev) => (prev - 1 + achievements.length) % achievements.length
     );
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 8000); // Pause for 8 seconds after manual navigation
   };
 
   const visibleAchievementsMobile = [achievements[achievementIndex]];
@@ -92,8 +77,6 @@ export const AchievementsSection = () => {
             minHeight: "400px",
             overflow: "hidden",
           }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
         >
           {visibleAchievementsDesktop.map((achievement, idx) => {
             const isCenter = achievement.position === "center";

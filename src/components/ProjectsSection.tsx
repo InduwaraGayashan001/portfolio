@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Box,
   Card,
@@ -18,7 +18,6 @@ import SectionWrapper from "./SectionWrapper";
 
 export const ProjectsSection = () => {
   const [projectIndex, setProjectIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const theme = useTheme();
 
   const projects = [
@@ -172,26 +171,12 @@ export const ProjectsSection = () => {
     },
   ];
 
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setProjectIndex((prev) => (prev + 1) % projects.length);
-      }, 5000); // Auto-slide every 5 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [projectIndex, isPaused, projects.length]);
-
   const handleNext = () => {
     setProjectIndex((prev) => (prev + 1) % projects.length);
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 10000); // Pause for 10 seconds after manual navigation
   };
 
   const handlePrev = () => {
     setProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 10000); // Pause for 10 seconds after manual navigation
   };
 
   const visibleProjectsMobile = [projects[projectIndex]];
@@ -220,8 +205,6 @@ export const ProjectsSection = () => {
             minHeight: "450px",
             overflow: "hidden",
           }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
         >
           {visibleProjectsDesktop.map((project, idx) => {
             const isCenter = project.position === "center";
