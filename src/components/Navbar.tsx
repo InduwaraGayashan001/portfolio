@@ -90,8 +90,20 @@ export default function Navbar({ toggleTheme, mode }: NavbarProps) {
   };
 
   return (
-    <AppBar position="fixed" sx={{ height: "70px", justifyContent: "center" }}>
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between",backdropFilter: "blur(10px)" }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        height: "70px",
+        justifyContent: "center",
+        backgroundColor:
+          mode === "dark"
+            ? "rgba(30, 30, 30, 0.7)"
+            : "rgba(255, 255, 255, 0.7)",
+        backdropFilter: "blur(10px)",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography
             variant="h6"

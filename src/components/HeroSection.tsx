@@ -57,11 +57,10 @@ function HeroSection() {
         flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         alignItems: "center",
-        marginTop: "70px",
         px: { xs: 2, md: 4 },
       }}
     >
-      <Box sx={{ flex: 2, textAlign: "center", mb: { xs: 2, md: 0 } }}>
+      <Box sx={{ flex: 2, textAlign: "center", mb: { xs: 2, md: 0 }, mt: { xs: 17, md: 17 } }}>
         <Box
           component="img"
           src="/portfolio/images/avatar.png"
@@ -81,6 +80,7 @@ function HeroSection() {
           padding: { xs: 2, md: 4 },
           textAlign: "center",
           flex: 4,
+          mt: { xs: 0, md: 17 },
         }}
       >
         <Typography variant="h5" component="h5" sx={fadeIn}>
